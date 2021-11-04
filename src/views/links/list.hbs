@@ -1,0 +1,26 @@
+<div class="container p-4">
+    <div class="row">
+
+        {{#each tasks}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3 class="card-title text-uppercase" style="color: rgb(71, 163, 224); font-weight: 700">{{title}}</h3>
+                        <p class="m-2">{{ description }}</p>
+                        <p>{{ timeago created_at }}</p>
+                        <a href="/links/edit/{{id}}" class="btn btn-secondary">Edit</a>
+                        <a href="/links/delete/{{id}}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>There are not anything to do.</p>
+                    <a href="/links/add">Create a task!</a>
+                </div>
+            </div>
+        {{/each}}
+
+    </div>
+</div>
